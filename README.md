@@ -1,8 +1,10 @@
 
 # DynaWhite
 
-A bukkit/spigot/paper plugin that allows to whitelist people based on identity
-verification written in Rust
+A
+[Bukkit](https://www.spigotmc.org/wiki/what-is-spigot-craftbukkit-bukkit-vanilla-forg/)
+plugin that allows to whitelist people based on identity verification written
+in Rust.
 
 ## Setup
 
