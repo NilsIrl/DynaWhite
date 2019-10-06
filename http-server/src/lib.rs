@@ -74,7 +74,6 @@ fn register_get() -> RegisterTemplate {
 }
 
 fn whitelist(uuid: Uuid, jvm: &JavaVM, plugin: &GlobalRef) {
-    println!("{}", uuid);
     let env = jvm.attach_current_thread().unwrap();
     env.call_method(
         env.call_method(
