@@ -39,8 +39,6 @@ Environment variables for the http server:
 
 ## Dependencies
 
-* `moreutils` (`sponge`)
 * `jq`
 * rust nightly
 * java
-

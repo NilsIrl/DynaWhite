@@ -7,7 +7,6 @@ stdenv.mkDerivation {
     pkgs.cargo
     pkgs.openssl
     pkgs.openjdk
-    pkgs.moreutils
   ];
 
   shellHook = ''
