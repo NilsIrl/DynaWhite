@@ -1,3 +1,7 @@
 main: re.nilsand.opgsmc.whitelist.App
+load: STARTUP
 name: DynaWhite
+description: A Bukkit plugin that allows to whitelist people based on identity verification written in Rust
 version: 0.1
+author: Nils André
+website: https://github.com/NilsIrl/DynaWhite
