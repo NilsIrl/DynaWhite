@@ -7,6 +7,7 @@ stdenv.mkDerivation {
     pkgs.cargo
     pkgs.openssl
     pkgs.openjdk
+    pkgs.maven
   ];
 
   shellHook = ''
