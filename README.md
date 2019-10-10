@@ -8,16 +8,16 @@ in Rust.
 
 ## Setup
 
-Run `build.sh` to generate the appropriate files.
+1. Run `mvn package` to generate the `.jar` file for the plugin.
+2. Run `cargo build --release` to generate the dynamic library for the plugin.
 
-`build.rs` expects `spigot.jar` to be present in `PWD`.
+Both files will be found in `/target/`.
 
 `fix_whitelist.sh` MAY be run called from `start.sh`. It ensures the whitelist
 has a correct format and is loaded when the server restarts.
 
-The `LD_LIBRARY_PATH` environment variable should be set to the path of the
-directory containing `libhttp_server.so`. `libhttp_server.so` is found in
-`http-server/target/(debug|release)/libhttp_server.so`
+The `LD_LIBRARY_PATH` or `java.library.path` should be set to the path of the
+directory containing the dynamic library.
 
 Environment variables for the http server:
 
@@ -32,7 +32,7 @@ Environment variables for the http server:
 * `VALID_DOMAIN` - The domain that email should belong to in order to be
   whitelisted
 
-`DynaWhite.jar` should be put inside the `plugins/` directory of your server.
+The `.jar` should be put inside the `plugins/` directory of your server.
 
 ### Optional
 
