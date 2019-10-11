@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% block title %}Register{% endblock %}
 {% block content %}
-{% if messages.len() != 0 %}
-	<ul>
-		{% for message in messages %}
-			<li>{{ message|e }}</li>
-		{% endfor %}
-	</ul>
-{% endif %}
-{% if !valid %}
-	<form method="POST">
-		<label for="username">Minecraft username: </label><input name="username" type="text"/>
-		<label for="email">Email: </label><input name="email" type="email"/>
-		<input type="submit"/>
-	</form>
-{% endif %}
+	{%- if messages.len() != 0 %}
+		<ul>
+			{% for message in messages -%}
+				<li>{{ message|e }}</li>
+			{%- endfor %}
+		</ul>
+	{%- endif %}
+	{%- if !valid %}
+		<form method="POST">
+			<label for="username">Minecraft username: </label><input name="username" type="text"/>
+			<label for="email">Email: </label><input name="email" type="email"/>
+			<input type="submit"/>
+		</form>
+	{%- endif -%}
 {% endblock %}
