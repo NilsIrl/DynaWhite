@@ -53,13 +53,6 @@ struct RegisterTemplate {
     messages: Vec<String>,
 }
 
-#[derive(Template)]
-#[template(path = "verify.html")]
-struct VerifyTemplate {
-    valid: bool,
-    message: String,
-}
-
 #[derive(FromForm)]
 struct UserForm {
     email: String,
@@ -111,7 +104,11 @@ fn verify<'a>(
     pending_users: State<Mutex<Vec<SentEmails>>>,
     jvm: State<JavaVM>,
     plugin: State<GlobalRef>,
-) -> VerifyTemplate {
+) -> RegisterTemplate {
+    let mut register_template = RegisterTemplate {
+        valid: true,
+        messages: Vec::new(),
+    };
     let mut pending_users = pending_users.lock().unwrap();
     match pending_users
         .iter()
@@ -121,23 +118,23 @@ fn verify<'a>(
             if pending_users[i].at.elapsed().unwrap().as_secs() < 60 * 60 * 24 {
                 whitelist(pending_users[i].mojang_uuid, &*jvm, &*plugin);
                 pending_users.remove(i);
-                VerifyTemplate {
-                    valid: true,
-                    message: format!("You have been successfully registered. You can now join the server at ip/domain '{}'", MC_SERVER_ADDR.as_str()),
-                }
+                register_template.messages.push(format!("You have been successfully registered. You can now join the server at ip/domain '{}'", MC_SERVER_ADDR.as_str()));
             } else {
                 pending_users.remove(i);
-                VerifyTemplate {
-                    valid: false,
-                    message: "The link has expired, re-register.".to_string(),
-                }
+                register_template.valid = false;
+                register_template
+                    .messages
+                    .push("The link has expired, re-register.".to_string());
             }
         }
-        None => VerifyTemplate {
-            valid: false,
-            message: "The token is invalid".to_string(),
-        },
-    }
+        None => {
+            register_template.valid = false;
+            register_template
+                .messages
+                .push("The token is invalid".to_string());
+        }
+    };
+    register_template
 }
 
 fn get_uuid(username: &str) -> Result<Uuid, ()> {
