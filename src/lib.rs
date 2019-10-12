@@ -34,6 +34,7 @@ use std::{
     convert::TryInto,
     str::FromStr,
     sync::{Arc, Mutex},
+    thread,
     time::SystemTime,
 };
 
@@ -197,7 +198,7 @@ fn register_post(
                     "An email has been sent to {} in order to confirm your identity",
                     user.email
                 ));
-                std::thread::spawn(move || {
+                thread::spawn(move || {
                     smtp_transport
                         .lock()
                         .unwrap()
@@ -235,7 +236,7 @@ pub extern "system" fn Java_re_nilsand_opgsmc_whitelist_App_onEnable(env: JNIEnv
     let jvm = env.get_java_vm().unwrap();
     let class = env.new_global_ref(*class).unwrap();
 
-    std::thread::spawn(move || {
+    thread::spawn(move || {
         rocket::ignite()
             .manage(Arc::new(Mutex::new(
                 lettre::SmtpClient::new(
