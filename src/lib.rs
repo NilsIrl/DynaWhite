@@ -98,7 +98,7 @@ fn whitelist(uuid: Uuid, jvm: &JavaVM, plugin: &GlobalRef) {
     .unwrap();
 }
 
-#[get("/verify?<token>")]
+#[get("/?<token>")]
 fn verify<'a>(
     token: Uuid,
     pending_users: State<Mutex<Vec<SentEmails>>>,
@@ -207,9 +207,10 @@ fn register_post(
                                 .from(SMTP_USERNAME.as_str())
                                 .subject("Identity verification - OPGSMC")
                                 .text(format!(
-                                "Click on the link to confirm your identity: {}/verify?token={}",
-                                WEBSITE_URL.as_str(), token
-                            ))
+                                    "Click on the link to confirm your identity: {}?token={}",
+                                    WEBSITE_URL.as_str(),
+                                    token
+                                ))
                                 .build()
                                 .unwrap()
                                 .into(),
