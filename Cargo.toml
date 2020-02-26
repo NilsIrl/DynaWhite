@@ -12,7 +12,7 @@ rocket = "0.4"
 rocket_contrib = { version = "0.4", default-features = false, features = ["uuid"] }
 askama = { version = "0.9", default-features = false, features = [ "with-rocket" ] }
 serde = { version = "1", features = ["derive"] }
-reqwest = "0.9"
+reqwest = "0.10"
 lettre = "0.9"
 lettre_email = "0.9"
 native-tls = "0.2"
