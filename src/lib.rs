@@ -139,12 +139,12 @@ fn verify<'a>(
 }
 
 fn get_uuid(username: &str) -> Result<Uuid, ()> {
-    reqwest::get(&format!(
+    reqwest::blocking::get(&format!(
         "https://api.mojang.com/users/profiles/minecraft/{}",
         username
     ))
     .or(Err(()))
-    .and_then(|mut response| response.json::<MojangUUIDResponse>().or(Err(())))
+    .and_then(|response| response.json::<MojangUUIDResponse>().or(Err(())))
     .and_then(|parsed_response| Uuid::from_str(&parsed_response.id).or(Err(())))
 }
 

@@ -4,7 +4,6 @@ with import <nixpkgs> {};
 stdenv.mkDerivation {
   name = "dice-game";
   buildInputs = [
-    pkgs.cargo
     pkgs.openssl
     pkgs.openjdk
     pkgs.maven
