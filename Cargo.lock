@@ -142,7 +142,7 @@ name = "c2-chacha"
 version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "ppv-lite86 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ppv-lite86 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -1028,7 +1028,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "ppv-lite86"
-version = "0.2.6"
+version = "0.2.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -1950,7 +1950,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum pin-project-lite 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "f7505eeebd78492e0f6108f7171c4948dbb120ee8119d9d77d0afa5469bef67f"
 "checksum pin-utils 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 "checksum pkg-config 0.3.17 (registry+https://github.com/rust-lang/crates.io-index)" = "05da548ad6865900e60eaba7f589cc0783590a92e940c26953ff81ddbab2d677"
-"checksum ppv-lite86 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)" = "74490b50b9fbe561ac330df47c08f3f33073d2d00c150f719147d7c54522fa1b"
+"checksum ppv-lite86 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)" = "237a5ed80e274dbc66f86bd59c1e25edc039660be53194b5fe0a482e0f2612ea"
 "checksum proc-macro2 0.4.30 (registry+https://github.com/rust-lang/crates.io-index)" = "cf3d2011ab5c909338f7887f4fc896d35932e29146c12c8d01da6b22a80ba759"
 "checksum proc-macro2 1.0.18 (registry+https://github.com/rust-lang/crates.io-index)" = "beae6331a816b1f65d04c45b078fd8e6c93e8071771f41b8163255bbd8d7c8fa"
 "checksum quote 0.6.13 (registry+https://github.com/rust-lang/crates.io-index)" = "6ce23b6b870e8f94f81fb0a363d65d86675884b34a09043c81e5562f11c1f8e1"
