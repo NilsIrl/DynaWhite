@@ -10,7 +10,7 @@ edition = "2018"
 jni = "0.17"
 rocket = "0.4.5"
 rocket_contrib = { version = "0.4", default-features = false, features = [ "uuid" ] }
-askama = { version = "0.9", default-features = false, features = [ "with-rocket" ] }
+askama = { version = "0.10", default-features = false, features = [ "with-rocket" ] }
 serde = { version = "1", features = [ "derive" ] }
 reqwest = { version = "0.10", features = [ "blocking", "json" ] }
 lettre = "0.9"
