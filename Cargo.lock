@@ -76,6 +76,8 @@ dependencies = [
  "askama_derive 0.10.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "askama_escape 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "askama_shared 0.10.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "mime 0.3.16 (registry+https://github.com/rust-lang/crates.io-index)",
+ "mime_guess 2.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -95,15 +97,29 @@ version = "0.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "askama_rocket"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "askama 0.10.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rocket 0.4.5 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "askama_shared"
 version = "0.10.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "askama_escape 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "humansize 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "nom 5.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.12 (registry+https://github.com/rust-lang/crates.io-index)",
+ "percent-encoding 2.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "proc-macro2 1.0.19 (registry+https://github.com/rust-lang/crates.io-index)",
  "quote 1.0.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde 1.0.114 (registry+https://github.com/rust-lang/crates.io-index)",
  "syn 1.0.36 (registry+https://github.com/rust-lang/crates.io-index)",
+ "toml 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -534,7 +550,7 @@ name = "futures-task"
 version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "once_cell 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "once_cell 1.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -672,6 +688,7 @@ name = "http-server"
 version = "0.1.0"
 dependencies = [
  "askama 0.10.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "askama_rocket 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "jni 0.17.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "lazy_static 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "lettre 0.9.3 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -686,6 +703,11 @@ dependencies = [
 [[package]]
 name = "httparse"
 version = "1.3.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "humansize"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -1082,7 +1104,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "once_cell"
-version = "1.4.0"
+version = "1.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -1725,6 +1747,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "toml"
+version = "0.5.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "serde 1.0.114 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "tower-service"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2040,6 +2070,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum askama 0.10.3 (registry+https://github.com/rust-lang/crates.io-index)" = "70a6e7ebd44d0047fd48206c83c5cd3214acc7b9d87f001da170145c47ef7d12"
 "checksum askama_derive 0.10.3 (registry+https://github.com/rust-lang/crates.io-index)" = "e1d7169690c4f56343dcd821ab834972a22570a2662a19a84fd7775d5e1c3881"
 "checksum askama_escape 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)" = "90c108c1a94380c89d2215d0ac54ce09796823cca0fd91b299cfff3b33e346fb"
+"checksum askama_rocket 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "40428c13bd027adfd481391729b85bf9961b59e5b21bb55e80f603d19d054583"
 "checksum askama_shared 0.10.4 (registry+https://github.com/rust-lang/crates.io-index)" = "62fc272363345c8cdc030e4c259d9d028237f8b057dc9bb327772a257bde6bb5"
 "checksum atty 0.2.14 (registry+https://github.com/rust-lang/crates.io-index)" = "d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8"
 "checksum autocfg 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)" = "1d49d90015b3c36167a20fe2810c5cd875ad504b39cff3d4eae7977e6b7c1cb2"
@@ -2113,6 +2144,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum http 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "28d569972648b2c512421b5f2a405ad6ac9666547189d0c5477a3f200f3e02f9"
 "checksum http-body 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "13d5ff830006f7646652e057693569bfe0d51760c0085a071769d142a205111b"
 "checksum httparse 1.3.4 (registry+https://github.com/rust-lang/crates.io-index)" = "cd179ae861f0c2e53da70d892f5f3029f9594be0c41dc5269cd371691b1dc2f9"
+"checksum humansize 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "b6cab2627acfc432780848602f3f558f7e9dd427352224b0d9324025796d2a5e"
 "checksum hyper 0.10.16 (registry+https://github.com/rust-lang/crates.io-index)" = "0a0652d9a2609a968c14be1a9ea00bf4b1d64e2e1f53a1b51b6fff3a6e829273"
 "checksum hyper 0.13.7 (registry+https://github.com/rust-lang/crates.io-index)" = "3e68a8dd9716185d9e64ea473ea6ef63529252e3e27623295a0378a19665d5eb"
 "checksum hyper-tls 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)" = "d979acc56dcb5b8dddba3917601745e877576475aa046df3226eabdecef78eed"
@@ -2154,7 +2186,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum num-traits 0.2.12 (registry+https://github.com/rust-lang/crates.io-index)" = "ac267bcc07f48ee5f8935ab0d24f316fb722d7a1292e2913f0cc196b29ffd611"
 "checksum num_cpus 1.13.0 (registry+https://github.com/rust-lang/crates.io-index)" = "05499f3756671c15885fee9034446956fff3f243d6077b91e5767df161f766b3"
 "checksum object 0.20.0 (registry+https://github.com/rust-lang/crates.io-index)" = "1ab52be62400ca80aa00285d25253d7f7c437b7375c4de678f5405d3afe82ca5"
-"checksum once_cell 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "0b631f7e854af39a1739f401cf34a8a013dfe09eac4fa4dba91e9768bd28168d"
+"checksum once_cell 1.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "260e51e7efe62b592207e9e13a68e43692a7a279171d6ba57abd208bf23645ad"
 "checksum opaque-debug 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)" = "2839e79665f131bdb5782e51f2c6c9599c133c6098982a54c794358bf432529c"
 "checksum openssl 0.10.30 (registry+https://github.com/rust-lang/crates.io-index)" = "8d575eff3665419f9b83678ff2815858ad9d11567e082f5ac1814baba4e2bcb4"
 "checksum openssl-probe 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "77af24da69f9d9341038eba93a073b1fdaaa1b788221b00a69bce9e762cb32de"
@@ -2224,6 +2256,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum tokio-tls 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "9a70f4fcd7b3b24fb194f837560168208f669ca8cb70d0c4b862944452396343"
 "checksum tokio-util 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "be8242891f2b6cbef26a2d7e8605133c2c554cd35b3e4948ea892d6d68436499"
 "checksum toml 0.4.10 (registry+https://github.com/rust-lang/crates.io-index)" = "758664fc71a3a69038656bee8b6be6477d2a6c315a6b81f7081f591bffa4111f"
+"checksum toml 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)" = "ffc92d160b1eef40665be3a05630d003936a3bc7da7421277846c2613e92c71a"
 "checksum tower-service 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "e987b6bf443f4b5b3b6f38704195592cca41c5bb7aedd3c3693c7081f8289860"
 "checksum tracing 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)" = "f0aae59226cf195d8e74d4b34beae1859257efb4e5fed3f147d2dc2c7d372178"
 "checksum tracing-core 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)" = "b2734b5a028fa697686f16c6d18c2c6a3c7e41513f9a213abb6754c4acb3c8d7"
