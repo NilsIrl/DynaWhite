@@ -8,7 +8,7 @@ edition = "2018"
 
 [dependencies]
 jni = "0.18"
-rocket = "0.4.5"
+rocket = "0.4.7"
 rocket_contrib = { version = "0.4", default-features = false, features = [ "uuid" ] }
 askama = "0.10.3"
 askama_rocket = "0.10.0"
